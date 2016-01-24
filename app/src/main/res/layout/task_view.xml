@@ -11,6 +11,7 @@
     android:foreground="?android:attr/selectableItemBackground">
 
     <RelativeLayout
+        android:id="@+id/task_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
@@ -22,7 +23,13 @@
             android:text="Take out the trash"
             android:id="@+id/info_text"/>
 
-
+        <LinearLayout
+            android:id="@+id/checkbox_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true">
+        </LinearLayout>
 
     </RelativeLayout>
 

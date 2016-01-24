@@ -9,12 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 
+import java.util.ArrayList;
+
 public class TaskList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private String[] myDataset;
+    private ArrayList<TaskData> TaskDataset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +29,16 @@ public class TaskList extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        myDataset = new String[]{"Take out the trash", "Clean the litter boxes", "Laugh", "Water the plants", "Floss", "Do ten pushups"};
+        TaskDataset = new ArrayList<TaskData>();
+        TaskDataset.add(new TaskData("Take out the trash", 2));
+        TaskDataset.add(new TaskData("Clean the litter boxes", 2));
+        TaskDataset.add(new TaskData("Laugh", 2));
+        TaskDataset.add(new TaskData("Water the plants", 2));
+        TaskDataset.add(new TaskData("Floss", 2));
+        TaskDataset.add(new TaskData("Do ten pushups", 2));
 
         // specify an adapter
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new MyAdapter(TaskDataset);
         mRecyclerView.setAdapter(mAdapter);
 
         // this could handle sorting maybe?
